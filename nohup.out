@@ -1,0 +1,44 @@
+/home/chao.chen/.virtualenvs/3.3.5websnail/lib/python3.3/site-packages/sqlalchemy/sql/elements.py:3759: SAWarning: Textual SQL expression 'status != -1' should be explicitly declared as text('status != -1') (this warning may be suppressed after 10 occurrences)
+  {"expr": util.ellipses_string(element)})
+/home/chao.chen/.virtualenvs/3.3.5websnail/lib/python3.3/site-packages/sqlalchemy/sql/elements.py:3759: SAWarning: Textual SQL expression 'status!=-1' should be explicitly declared as text('status!=-1') (this warning may be suppressed after 10 occurrences)
+  {"expr": util.ellipses_string(element)})
+0process has started
+[2015-10-22 17:47:40 +0800] [20379] [INFO] Starting gunicorn 19.3.0
+[2015-10-22 17:47:40 +0800] [20379] [INFO] Listening at: http://0.0.0.0:8888 (20379)
+[2015-10-22 17:47:40 +0800] [20379] [INFO] Using worker: sync
+[2015-10-22 17:47:40 +0800] [20388] [INFO] Booting worker with pid: 20388
+[2015-10-22 17:47:40 +0800] [20390] [INFO] Booting worker with pid: 20390
+[2015-10-22 17:47:40 +0800] [20392] [INFO] Booting worker with pid: 20392
+[2015-10-22 17:47:40 +0800] [20395] [INFO] Booting worker with pid: 20395
+[2015-10-22 17:47:40 +0800] [20399] [INFO] Booting worker with pid: 20399
+[2015-10-22 17:47:40 +0800] [20402] [INFO] Booting worker with pid: 20402
+[2015-10-22 17:47:40 +0800] [20405] [INFO] Booting worker with pid: 20405
+[2015-10-22 17:47:40 +0800] [20408] [INFO] Booting worker with pid: 20408
+[2015-10-22 17:47:40 +0800] [20410] [INFO] Booting worker with pid: 20410
+[2015-10-22 17:47:40 +0800] [20413] [INFO] Booting worker with pid: 20413
+[2015-10-22 17:47:41 +0800] [20416] [INFO] Booting worker with pid: 20416
+[2015-10-22 17:47:41 +0800] [20418] [INFO] Booting worker with pid: 20418
+[2015-10-22 17:47:41 +0800] [20420] [INFO] Booting worker with pid: 20420
+[2015-10-22 17:47:41 +0800] [20423] [INFO] Booting worker with pid: 20423
+[2015-10-22 17:47:41 +0800] [20424] [INFO] Booting worker with pid: 20424
+[2015-10-22 17:47:41 +0800] [20428] [INFO] Booting worker with pid: 20428
+[2015-10-22 17:47:41 +0800] [20429] [INFO] Booting worker with pid: 20429
+[2015-10-22 17:48:03 +0800] [20392] [INFO] Worker exiting (pid: 20392)
+[2015-10-22 17:48:03 +0800] [20395] [INFO] Worker exiting (pid: 20395)
+[2015-10-22 17:48:03 +0800] [20390] [INFO] Worker exiting (pid: 20390)
+[2015-10-22 17:48:03 +0800] [20402] [INFO] Worker exiting (pid: 20402)
+[2015-10-22 17:48:03 +0800] [20399] [INFO] Worker exiting (pid: 20399)
+[2015-10-22 17:48:03 +0800] [20388] [INFO] Worker exiting (pid: 20388)
+[2015-10-22 17:48:03 +0800] [20379] [INFO] Handling signal: term
+[2015-10-22 17:48:03 +0800] [20418] [INFO] Worker exiting (pid: 20418)
+[2015-10-22 17:48:03 +0800] [20428] [INFO] Worker exiting (pid: 20428)
+[2015-10-22 17:48:03 +0800] [20423] [INFO] Worker exiting (pid: 20423)
+[2015-10-22 17:48:03 +0800] [20405] [INFO] Worker exiting (pid: 20405)
+[2015-10-22 17:48:03 +0800] [20429] [INFO] Worker exiting (pid: 20429)
+[2015-10-22 17:48:03 +0800] [20416] [INFO] Worker exiting (pid: 20416)
+[2015-10-22 17:48:03 +0800] [20424] [INFO] Worker exiting (pid: 20424)
+[2015-10-22 17:48:03 +0800] [20413] [INFO] Worker exiting (pid: 20413)
+[2015-10-22 17:48:03 +0800] [20420] [INFO] Worker exiting (pid: 20420)
+[2015-10-22 17:48:03 +0800] [20408] [INFO] Worker exiting (pid: 20408)
+[2015-10-22 17:48:03 +0800] [20410] [INFO] Worker exiting (pid: 20410)
+[2015-10-22 17:48:03 +0800] [20379] [INFO] Shutting down: Master

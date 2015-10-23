@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Report{% endblock %}
+
+{% block body %}
+{{ super() }}
+<div class="container">
+	<div class="page-header">
+		<h2 class="ng-binding">测试报告</h2>
+			{% for message in get_flashed_messages() %}
+				{% if message.type == 'error' %}
+					<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				{% else %}
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+				{% endif %}
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<h5>
+							{{ message.message }}
+						</h5>
+					</div>
+			{% endfor %}
+	</div>
+
+	<div style="margin-top:10px;">
+		<table name="table1" class="table table-striped">
+			<tbody>
+			<tr>
+				<th style="width:10%;text-align:center;"><code>服务地址</code></th>
+				<th style="width:10%;text-align:center;"><code>服务版本</code></th>
+				<th style="width:10%;text-align:center;"><code>测试集|大小</code></th>
+				<th style="width:20%;text-align:center;"><code>最小and最大响应时间</code></th>
+				<th style="width:10%;text-align:center;"><code>总请求数</code></th>
+				<th style="width:20%;text-align:center;"><code>错误请求数及占比</code></th>
+				<th style="width:20%;text-align:center;"><code>平均响应时间|吞吐量</code></th>
+			</tr>
+	{% if reportDetail %}
+	<tr class="ng-scope">
+		<td class="ng-binding" style="text-align:center">{{reportDetail.测试服务}}</td>
+		<td class="ng-binding" style="text-align:center">{{reportDetail.服务版本}}</td>
+		<td class="ng-binding" style="text-align:center">{{reportDetail.测试集and大小}}</td>
+		<td class="ng-binding" style="text-align:center">{{reportDetail.最小and最大响应时间}}</td>
+		<td class="ng-binding" style="text-align:center">{{reportDetail.总请求数}}</td>
+		<td class="ng-binding" style="text-align:center;background-color:pink">{{reportDetail.错误请求数及占比}}</td>
+		<td class="ng-binding" style="text-align:center;background-color:#CAFF70">{{reportDetail.平均响应时间and吞吐量}}</td>
+	</tr>
+	{% endif %}
+			</tbody>
+		</table>
+	</div>
+	
+	
+	
+	<div style="margin-top:50px">
+		<table class="table table-bordered">
+			<tbody>
+			{% if reportDetail %}
+				<tr>
+					<th scope="row">
+                        <code>错误统计ErrorCounter</code>
+					</th>
+					<td>{{reportDetail.错误统计ErrorCounter}}</td>
+				 </tr>
+
+				<tr>
+					<th scope="row">
+                        <code>参数计数器CustomTimers</code>
+					</th>
+                    <td>{{reportDetail.参数计数器CustomTimers}}</td>
+				 </tr>
+				<tr>
+					<th scope="row">
+                        <code>测试时间</code>
+					</th>
+					<td>{{reportDetail.测试时间}}</td>
+				 </tr>
+				<tr>
+					<th scope="row">
+                        <code>日志路径</code>
+					</th>
+					<td>{{reportDetail.日志路径}}</td>
+				 </tr>
+			{% endif %}
+			</tbody>
+		</table>
+	</div>
+	
+	<div>
+		
+	</div>
+</div>
+{% endblock %}

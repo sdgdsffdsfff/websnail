@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+{% block scripts %}
+	{{ super() }}
+{% endblock %}
+{% block title %}报告分析{% endblock %}
+{% block body %}
+{{ super() }}
+<div class="container">
+    <div class="page-header">
+        <h2 class="ng-binding">测试报告</h2>
+    </div>
+	<div style="margin:20px;">
+	{% if form %}
+		<span style="text-align:center;">
+			<form method="post">
+			{{ form.csrf_token }}
+			<div class="row">
+				<div style="float:left;display:inline;margin-left:30px">
+				{{ form.servicetype.label }} {{ form.servicetype(class="btn btn-default dropdown-toggle") }}
+				</div>
+				<div style="float:left;display:inline;margin-left:30px">
+				{{ form.concurrent.label }} {{ form.concurrent(class="btn btn-default dropdown-toggle") }}
+				</div>
+				<div style="float:left;display:inline;margin-left:30px">
+				{{ form.suit.label }} {{ form.suit(class="btn btn-default dropdown-toggle") }}
+				</div>
+				<div style="float:left;display:inline;margin-left:30px">
+				{{ form.serviceversion.label }} {{ form.serviceversion(class="multiselect") }}
+					<script type="text/javascript">
+						$(document).ready(function() {
+							$('.multiselect').multiselect({
+								includeSelectAllOption:true
+							});
+						 });
+					</script>
+				</div>
+				<div style="float:left;display:inline;margin-left:30px">
+				{{ form.submit(class="btn btn-primary") }}
+				</div>
+			</div>
+			</form>
+		</span>
+		{% endif %}
+	</div>
+
+	<div style="padding:5px" class="panel panel-default">
+		<table class="table table-condensed">
+		<tr>
+			<td class="info">版本</td>
+			<td class="info">线程数(并发)</td>
+			<td class="info">测试集</td>
+			<td class="info">样本数量</td>
+			<td class="info">平均响应时间(秒)</td>
+			<td class="info">吞吐量</td>
+			<td class="info">CustomTimers</td>
+		</tr>
+		{% if tableData %}
+		{% for index,line in tableData.items() %}
+			<tr>
+				{% for i in line%}
+					<td>{{ i }}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+		{% endif %}
+		</table>
+	</div>
+	<div>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+{% if linechartData %}
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingOne">
+		      <h4 class="panel-title">
+		        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		          响应时间
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+		      <div>
+				<div id="linechart" style="height:400px;margin:20px">
+				</div>
+		      </div>
+		    </div>
+		  </div>
+{% endif %}
+{% if barchartData %}
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingThree">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		          CustomTimers
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+		      <div>
+		      	<div id="barchart" style="height:400px;">
+				</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+{% endif %}
+	</div>
+
+
+<script src='/static/echarts/echarts.js'></script>
+
+<script type="text/javascript">
+	require.config({
+		paths:{
+			echarts:'/static/echarts'
+		}
+	});
+
+	require(
+		[
+			'echarts',
+			'echarts/chart/bar',
+			'echarts/chart/pie',
+			'echarts/chart/funnel',
+			'echarts/chart/line',
+			'echarts/chart/map'
+		],
+		function(ec) {
+{% if barchartData %}
+			var barchart = ec.init(document.getElementById('barchart'));
+			barchart.setOption({
+			    tooltip : {
+			        show: true,
+			        trigger: 'item',
+			        formatter: "{a} <br/>出现个数 : {c}"
+			    },
+			    legend: {
+			        data:{{ barchartData.customs|safe }}
+			    },
+			    toolbox: {
+			        show : true,
+			        feature : {
+			            magicType : {show: true, type: ['line', 'bar']},
+			            saveAsImage : {show: true}
+			        }
+			    },
+			    calculable : true,
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : {{ barchartData.xAxisData|safe }}
+			        }
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value'
+			        }
+			    ],
+			    series : {{ barchartData.series|safe }}
+			});
+{% endif %}
+<!-- ======================================================linechart======================================================= -->
+{% if linechartData %}
+			var linechart = ec.init(document.getElementById('linechart'));
+			linechart.setOption({
+				tooltip : {
+					trigger:'axis' //axis/item  鼠标移入图表区域时的tip显示格式
+				},
+				legend : {
+					orient:"horizontal",//横向  vertical,竖向
+					x:"center", //居中，right/left/{number}
+					y:"top", //center/bottom/{number}
+					borderColor:'rgba(178,34,34,0.8)',
+					borderWidth:2,
+					data:{{linechartData.data|safe}}
+				},
+				toolbox:{
+					show:true,
+					feature:{
+						magicType:{show:true,type:['line','bar']},
+						saveAsImage:{show:true}
+					}
+				},
+				calculabel:true,
+				xAxis:[
+					{
+						type:'category',
+						data:{{linechartData.xAxisData|safe}}
+					}
+				],
+				yAxis:[
+					{
+						type:'value',
+						boundaryGap:[0.2,0.2],
+						splitArea:{show:true}
+					}
+				],
+				series:{{linechartData.series|safe}}
+			});
+{% endif %}
+		}
+	);
+
+</script>
+
+<script language="javascript">
+	window.onload=changeSelect;
+	var type = document.getElementById("servicetype");
+	var conc = document.getElementById("concurrent");
+	var suit = document.getElementById("suit");
+	type.onclick=changeSelect;
+	conc.onclick=changeSelect;
+	suit.onclick=changeSelect;
+//bootstrap-multiselect
+	function changeSelect() {
+		$.get('/getversion?type={0}&conc={1}&suit={2}'.format(type.selectedIndex,conc.selectedIndex,suit.selectedIndex),function(data) {
+			data = JSON.parse(data);
+			
+			$('option',$('#serviceversion')).remove();
+
+			var buff = new StringBuffer();
+
+			for(v in data) {
+				buff.append('<option value="{0}">{1}</option>'.format(v,data[v]));
+			}
+			console.log(buff.toString())
+			$('#serviceversion').append(buff.toString());
+			$('#serviceversion').multiselect('rebuild');
+		})
+	}
+</script>
+{% if not linechartData and not piechartData and not barchartData %}
+<div style="text-align:center;">
+	没有数据！
+</div>
+{% endif %}
+</div>
+
+{% endblock %}

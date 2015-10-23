@@ -1,0 +1,51 @@
+import requests,itertools,random
+from collections import OrderedDict
+
+lis = []
+class Case3():
+	def __init__(self,testsuit,ip='{ip}'):
+		self.custom_timers = OrderedDict()
+		self.path = '{path}'
+		self.url = ''.join(['http://',ip,self.path])
+		self.testvalue = True
+		self.head = ''
+		self.session = requests.Session()
+		if testsuit:
+			self.case = self.getrandom(testsuit)
+		else:
+			self.case = self.getrandom(lis)
+
+	def getrandom(self,suit):
+		ls = itertools.cycle(suit)
+		for i in ls:
+			yield i
+
+	def test(self):
+		data = {data}
+		r = self.session.{method}(self.url,{param_type}=data,headers={headers},timeout=({conn_timeout},{resp_timeout}))
+		h = self.session.head(self.url)
+		self.head = 'Server Software: %s' %(h.headers.get('server', 'Unknown'))
+		if r.status_code != 200:
+			print ('%s ERROR!'%(r.status_code))
+			self.testvalue=False
+		else:
+			print('状态码：%s' %r.status_code)
+
+	def run(self):
+		data = {data}
+		r = self.session.post(self.url,{param_type}=data,headers={headers},timeout=({conn_timeout},{resp_timeout}))
+		assert r.status_code == 200,str(r.status_code)+'error'
+		{counter}
+
+if __name__ == "__main__":
+	c = Case3([])
+	c.test()
+
+
+
+
+
+
+
+
+

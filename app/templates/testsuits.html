@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block title %}测试集管理页{% endblock %}
+
+{% block body %}
+{{ super() }}
+
+<div id="addSuitModal" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="modalTitle">新增测试集</h4>
+			</div>
+
+			<div class="modal-body">
+				<form id="suitform" action="/testsuits" method="post" enctype="multipart/form-data">
+					{{ form.csrf_token }}
+					<div id="namediv" style="margin-bottom:10px">
+					{{ form.name.label }}{{form.name(class="form-control")}}
+					</div>
+					<div style="margin-bottom:10px">
+					{{ form.servicetype.label }}{{form.servicetype(class="form-control")}}
+					</div>
+					<div style="margin-bottom:10px" id="filenamediv">
+					{{ form.filename.label }}{{form.filename(class="form-control")}}
+					</div>
+					<div style="display:none;margin-bottom:10px" id="datafilediv">
+					{{ form.datafile.label }}{{form.datafile(class="form-control")}}
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<a id="submit" onclick="validate_on_submit()" class="btn btn-primary">提交</a>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container">
+    <div class="page-header">
+        <h2 class="ng-binding">测试集配置</h2>
+		{% for message in get_flashed_messages() %}
+			{% if message.type == 'error' %}
+				<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			{% else %}
+				<div class="alert alert-success alert-dismissible fade in" role="alert">
+			{% endif %}
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h5>
+						{{ message.message }}
+					</h5>
+				</div>
+		{% endfor %}
+    </div>
+	<div>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSuitModal" onclick="setonclick()">新增测试集</button>
+	</div>
+
+	<div style="margin-top:10px;">
+		<table name="table1" class="table table-striped">
+			<tbody>
+			<tr>
+				<th style="width:10%">ID</th>
+				<th style="width:15%">测试集名称</th>
+				<th style="width:20%">测试集服务对象(服务类型)</th>
+				<th style="width:20%">测试集大小</th>
+				<th style="width:20%">创建时间</th>
+				<th style="width:15%">&nbsp&nbsp&nbsp&nbsp操作</th>
+			</tr>
+	{% if testSuits %}
+		{% for suit in testSuits %}
+			<tr class="ng-scope">
+				<td class="ng-binding">{{suit.id}}</td>
+				<td class="ng-binding">{{suit.name}}</td>
+				<td class="ng-binding">{{suit.servicetype}}</td>
+				<td class="ng-binding">{{suit.size}}</td>
+				<td class="ng-binding">{{suit.createdtime}}</td>
+				<td class="ng-bliding">
+					<a class="btn btn-danger" onclick="del({{suit.id}})">删除</button>
+				</td>
+			</tr>
+		{% endfor %}
+	{% endif %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script language="javascript">
+	function del(id) {
+		bootbox.confirm("是否确认删除测试集？",function(result){
+			if(result) {
+                $.get('/delsuit/'+id,function(data){
+                    if (data == "success") {
+                        location.reload(0);
+                    }
+                });
+			}else{
+				console.log("choice false");
+			}
+		});
+	}
+
+	function validate_on_submit() {
+		var ispass = true;
+		var name = document.getElementById("name");
+		var namediv = document.getElementById("namediv");
+
+		if(name.value == '') {
+			namediv.setAttribute("class", "form-group has-error");
+			name.placeholder = "请输入服务名称";
+			ispass = false;
+		}else {
+			namediv.setAttribute("class", "");
+			name.placeholder = "";
+		}
+		
+		if (ispass) {
+			var submit = document.getElementById('submit');
+			submit.onclick = null;
+			submit.innerHTML = "正在提交..";
+			$("#suitform").submit();
+		}
+	}
+	
+	function changeServiceType() {
+		var selected = document.getElementById("servicetype");
+		choiced = selected.options[selected.options.selectedIndex].text.toLowerCase();
+		var filenamediv = document.getElementById("filenamediv");
+		var datafile = document.getElementById("datafile");
+		var datafilediv = document.getElementById("datafilediv");
+		if(choiced == 'nlp') {
+			filenamediv.style.display = "none";
+			datafilediv.style.display = "";
+			datafile.value = "/home/wenba/xz/automation/data/nlpdata";
+		}else if(choiced == 'search'){
+			filenamediv.style.display = "none";
+			datafilediv.style.display = "";
+			datafile.value = "/home/wenba/xz/automation/data/ocrdatafile";
+		}else if(choiced == '1v1'){
+			filenamediv.style.display = "none";
+			datafilediv.style.display = "none";
+		}else if(choiced == 'none'){
+			filenamediv.style.display = "none";
+			datafilediv.style.display = "none";
+		}else {
+			filenamediv.style.display = "";
+			datafilediv.style.display = "none";
+		}
+	}
+
+	function setonclick() {
+		var item=document.getElementById("servicetype"); 
+		item.onclick=changeServiceType;
+	}
+</script>
+{% endblock %}

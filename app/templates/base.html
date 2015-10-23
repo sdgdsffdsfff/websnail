@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+{% block head %}
+  <meta charset="UTF-8">
+  <link type="image/x-icon" rel="shortcut icon" href="/static/imgs/favicon.ico" />
+  <title>WebSnail-
+  {% block title %}
+  {% endblock %}
+  </title>
+  {% block csss %}
+  	<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-multiselect.css">
+	<link href="//cdn.bootcss.com/intro.js/1.0.0/introjs.min.css" rel="stylesheet">
+  {% endblock %}
+  {% block scripts %}
+  	<script src="/static/jquery/jquery.min.js"></script>
+  	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+  	<script src="/static/js/bootstrap-multiselect.js"></script>
+  	<script src="/static/js/main.js"></script>
+  	<script src="/static/js/bootbox.min.js"></script>
+	<script src="//cdn.bootcss.com/intro.js/1.0.0/intro.min.js"></script>
+	<script src="/static/js/spin.js"></script>
+	<script src="/static/js/ladda.js"></script>
+  {% endblock %}
+{% endblock %}
+</head>
+<body>
+
+{% block body %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li><a href="/services" data-toggle="tooltip" data-placement="bottom" title="第一步:新建接口服务(IP地址)"><font color="">接口服务管理</font></a></li>
+			<li><a href="/scripts" data-toggle="tooltip" data-placement="bottom" title="第二步:新增测试脚本"><font color="">测试脚本管理</font></a></li>
+			<li><a href="/testjobs" data-toggle="tooltip" data-placement="bottom" title="第三步:新建测试任务"><font color="">新建测试任务</font></a></li>
+			<li><a href="/testsuits" data-toggle="tooltip" data-placement="bottom" title="仅OCR/NLP/SEARCH需要这项">测试集管理</a></li>
+			
+			<li><a href="/analysis" data-toggle="tooltip" data-placement="bottom" title="历史测试报告图形展示">测试报告分析</a></li>
+			<li><a href="/downimgs" data-toggle="tooltip" data-placement="bottom" title="用于OCR">上传图片页面</a></li>
+		</ul>
+		<ul class="nav navbar-nav" style="margin-left:800px">
+			{% if current_user.is_authenticated %}
+			<li><a href="#">当前用户:{{ current_user.email }}</a></li>
+			<li><a href="/logout">注销</a></li>
+			{% endif %}
+		</ul>
+	</div>
+</nav>
+<div style="margin-bottom:50px"></div>
+{% endblock %}
+</body>
+<script language="javascript">
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+</script>
+</html>
+

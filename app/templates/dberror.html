@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}异常页面{% endblock %}
+
+{% block body %}
+{{ super() }}
+
+<div class="container">
+    <div class="page-header">
+        <h2 class="ng-binding">数据库异常</h2>
+			{% for message in get_flashed_messages() %}
+				{% if message.type == 'error' %}
+					<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				{% else %}
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+				{% endif %}
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<h5>
+							{{ message.message }}
+						</h5>
+					</div>
+			{% endfor %}
+    </div>
+
+	<div>
+		<table class="table table-striped">
+			{% for line in errorinfo %}
+				<tr class="info">
+					<td class="active"><font color=red>{{line}}</font></td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}
+

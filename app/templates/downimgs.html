@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}DownLoadImg{% endblock %}
+
+{% block csss %}
+{{ super() }}
+{% endblock %}
+
+
+{% block body %}
+{{ super() }}
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<h4 class="modal-title" id="myLargeModalLabel">下载状态</h4>
+			</div>
+
+			<div id="downstatus" class="modal-body">
+				正在加载下载状态，请稍后...
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="page-header">
+        <h2 class="ng-binding">图片批量下载</h2>
+			{% for message in get_flashed_messages() %}
+				{% if message.type == 'error' %}
+					<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				{% else %}
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+				{% endif %}
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<h5>
+							{{ message.message }}
+							{% if message.type == 'download' %}
+								<a onclick="getdownloadstatus({{ message.id }})" data-toggle="modal" data-target=".bs-example-modal-lg">点击查看下载情况</a>
+							{% endif %}
+						</h5>
+					</div>
+			{% endfor %}
+    </div>
+
+	<div>
+		{{ wtf.quick_form(fileform) }}
+	</div>
+{% endblock %}
+
