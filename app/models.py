@@ -130,8 +130,7 @@ class Downimg(db.Model):
 class Service(db.Model):
 	id = db.Column(db.Integer,primary_key=True)
 	name = db.Column(db.String(50))
-	address = db.Column(db.String(50),unique=True)
-	typename = db.Column(db.String(20))
+	address = db.Column(db.String(256),unique=True)
 	status = db.Column(db.Integer,default=0)
 	createdtime = db.Column(db.DateTime,default=datetime.now)
 

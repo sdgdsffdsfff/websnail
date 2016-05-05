@@ -49,6 +49,7 @@ def testjobs():
 	jobform.suits.choices = suits
 
 	if request.method == 'POST' and jobform.validate_on_submit():
+		print("here")         
 		if jobform.run_time.data is not None and jobform.run_num.data is not None:
 			flash({"type":"error","message":"新增失败！并发时间、循环次数 只能选填一个！"})
 			return(redirect(url_for('.testjobs')))

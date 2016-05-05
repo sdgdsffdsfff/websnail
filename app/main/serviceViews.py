@@ -14,7 +14,6 @@ def services():
 	servicetypes = []
 	try:
 		services = Service.query.order_by(Service.id.desc()).all()
-		servicetypes = [(i+1,v.typename) for i,v in enumerate(Servicetype.query.order_by('id').all())]
 	except:
 		errorinfo = traceback.format_exc()
 		logging.error("数据库异常："+errorinfo)
@@ -22,7 +21,6 @@ def services():
 		return render_template('dberror.html',errorinfo=errorinfo.split('\n'))
 
 	form = ServiceForm()
-	form.type.choices = servicetypes
 	
 	if request.method == "POST" and form.validate_on_submit():
 		if saveService(form) is None:
@@ -33,14 +31,10 @@ def services():
 	return(render_template('services.html',form=form,services=services))
 
 def saveService(form):
-	for i,v in form.type.choices:
-		if i == int(form.type.data):
-			typename = v
 
 	service = Service(
 			name = form.name.data,
 			address = form.address.data,
-			typename = typename
 		)
 
 	try:

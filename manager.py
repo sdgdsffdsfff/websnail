@@ -18,8 +18,6 @@ def dbinit():
 		servicetype = Servicetype()
 		servicetype.typename = type
 		db.session.add(servicetype)
-	user = User(email='admin',password='admin')
-	db.session.add(user)
 	db.session.commit()
 	print('ok')
 

@@ -21,10 +21,10 @@ class RegisterForm(Form):
 
 
 class JobForm(Form):
-	service = SelectField('测试服务:',coerce=int,default=1)
+	service = SelectField('测试接口:',coerce=int,default=1)
 	selectfile = SelectField('测试脚本:',coerce=int,default=1)
 	suits = SelectField('选择测试集:',coerce=int)
-	serviceversion = StringField("服务版本号:",[validators.Required()])
+	serviceversion = StringField("接口版本号:",[validators.Required()])
 	concurrent = IntegerField('并发量:',[validators.Required("请输入整数！"),validators.NumberRange(1,5000,"请输入1~1000范围内的整数！")])
 	run_time = IntegerField('并发时间:(秒)',[validators.Optional(True),validators.NumberRange(min=0,message="请输入正整数！")])
 	run_num = IntegerField('循环次数:',[validators.Optional(True),validators.NumberRange(min=0,message="请输入正整数！")])
@@ -52,9 +52,8 @@ class AnalysisForm(Form):
 	submit = SubmitField("确定")
 
 class ServiceForm(Form):
-	name = StringField('服务名称:',[validators.Required()])
-	address = StringField('服务地址:',[validators.Required()])
-	type = SelectField('服务类型:',coerce=int,default=1)
+	name = StringField('接口名称:',[validators.Required()])
+	address = StringField('接口地址:',[validators.Required()])
 	submit = SubmitField("保存")
 
 class TestSuitForm(Form):

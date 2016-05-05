@@ -1,0 +1,477 @@
+2016-05-05 16:43:39 _internal.py[line:87] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2016-05-05 16:43:39 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 16:43:39 _internal.py[line:87] WARNING  * Debugger is active!
+2016-05-05 16:43:39 _internal.py[line:87] INFO  * Debugger pin code: 246-385-333
+2016-05-05 16:45:16 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 16:45:16 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 16:45:17 _internal.py[line:87] WARNING  * Debugger is active!
+2016-05-05 16:45:17 _internal.py[line:87] INFO  * Debugger pin code: 246-385-333
+2016-05-05 16:45:25 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 16:45:25] "GET / HTTP/1.1" 500 -
+2016-05-05 16:45:25 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 16:45:25] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-05 16:45:25 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 16:45:25] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-05 16:45:25 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 16:45:25] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-05 16:45:25 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 16:45:25] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-05 16:45:25 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 16:45:25] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 16:45:25 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 16:45:25] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:06:18 _internal.py[line:87] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2016-05-05 17:06:18 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:14:35 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 17:14:35 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET / HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/jquery/jquery.min.js HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/js/main.js HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/js/bootbox.min.js HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/js/spin.js HTTP/1.1" 200 -
+2016-05-05 17:14:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:41] "GET /static/js/ladda.js HTTP/1.1" 200 -
+2016-05-05 17:14:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:43] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:14:46 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:46] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:14:52 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:52] "GET /logout HTTP/1.1" 302 -
+2016-05-05 17:14:52 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:52] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:14:58 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:14:58] "POST /login HTTP/1.1" 200 -
+2016-05-05 17:15:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:15:02] "GET /register HTTP/1.1" 200 -
+2016-05-05 17:15:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:15:08] "POST /register HTTP/1.1" 200 -
+2016-05-05 17:15:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:15:11] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:15:15 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:15:15] "POST /login HTTP/1.1" 200 -
+2016-05-05 17:15:29 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:15:29] "POST /login HTTP/1.1" 200 -
+2016-05-05 17:15:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:15:38] "GET / HTTP/1.1" 302 -
+2016-05-05 17:15:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:15:38] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:16:13 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:13] "POST /login HTTP/1.1" 200 -
+2016-05-05 17:16:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:16] "GET /register HTTP/1.1" 200 -
+2016-05-05 17:16:23 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:23] "POST /register HTTP/1.1" 302 -
+2016-05-05 17:16:23 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:23] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:16:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:27] "POST /login HTTP/1.1" 302 -
+2016-05-05 17:16:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:27] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:16:30 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:30] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /downimgs HTTP/1.1" 404 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /static/css/style.css HTTP/1.1" 200 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /static/imgs/logo.png HTTP/1.1" 200 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /static/imgs/bg2.png HTTP/1.1" 200 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /static/imgs/signal.png HTTP/1.1" 200 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /static/imgs/bg.jpg HTTP/1.1" 200 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /static/font/opensans_light_macroman/OpenSans-Light-webfont.woff HTTP/1.1" 200 -
+2016-05-05 17:16:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:32] "GET /favicon.ico HTTP/1.1" 404 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /analysis HTTP/1.1" 200 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/echarts/echarts.js HTTP/1.1" 200 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/echarts/chart/bar.js HTTP/1.1" 200 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/echarts/chart/pie.js HTTP/1.1" 200 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/echarts/chart/funnel.js HTTP/1.1" 200 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/echarts/chart/line.js HTTP/1.1" 200 -
+2016-05-05 17:16:48 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:48] "GET /static/echarts/chart/map.js HTTP/1.1" 200 -
+2016-05-05 17:16:49 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:49] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:16:54 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:54] "GET /analysis HTTP/1.1" 200 -
+2016-05-05 17:16:54 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:54] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:16:56 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:56] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:16:56 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:56] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:16:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:57] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:16:58 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:58] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:16:59 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:59] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:16:59 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:16:59] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:17:00 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:17:00] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:17:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:17:57] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:18:07 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:07] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:18:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:10] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:18:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:10] "GET /analysis HTTP/1.1" 200 -
+2016-05-05 17:18:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:10] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts HTTP/1.1" 500 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-05 17:18:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:11] "GET /scripts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:18:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:18:27] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:19:17 _internal.py[line:87] INFO  * Detected change in '/root/websnail/configs.py', reloading
+2016-05-05 17:19:17 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:19:57 _internal.py[line:87] INFO  * Detected change in '/root/websnail/manager.py', reloading
+2016-05-05 17:19:57 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:19:58 _internal.py[line:87] INFO  * Detected change in '/root/websnail/configs.py', reloading
+2016-05-05 17:19:59 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:20:20 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 17:20:20 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:20:37 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:20:37] "GET / HTTP/1.1" 302 -
+2016-05-05 17:20:37 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:20:37] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:20:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:20:41] "POST /login HTTP/1.1" 200 -
+2016-05-05 17:20:46 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:20:46] "POST /login HTTP/1.1" 200 -
+2016-05-05 17:21:13 _internal.py[line:87] INFO  * Detected change in '/root/websnail/manager.py', reloading
+2016-05-05 17:21:13 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:21:27 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 17:21:27 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:21:29 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:29] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:21:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:31] "GET /register HTTP/1.1" 200 -
+2016-05-05 17:21:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:38] "POST /register HTTP/1.1" 302 -
+2016-05-05 17:21:39 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:39] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:21:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:41] "POST /login HTTP/1.1" 302 -
+2016-05-05 17:21:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:41] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:21:44 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:44] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:21:44 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:44] "GET /scripts HTTP/1.1" 500 -
+2016-05-05 17:21:44 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:44] "GET /scripts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-05 17:21:44 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:44] "GET /scripts?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-05 17:21:44 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:44] "GET /scripts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-05 17:21:45 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:45] "GET /scripts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-05 17:21:45 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:45] "GET /scripts?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-05 17:21:45 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:45] "GET /scripts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:21:47 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:21:47] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:22:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:10] "GET /scripts HTTP/1.1" 500 -
+2016-05-05 17:22:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:10] "GET /scripts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-05 17:22:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:10] "GET /scripts?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-05 17:22:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:10] "GET /scripts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-05 17:22:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:10] "GET /scripts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-05 17:22:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:10] "GET /scripts?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-05 17:22:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:10] "GET /scripts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:22:14 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:14] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:22:14 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:14] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:22:17 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:17] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:22:51 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:51] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:22:52 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:52] "GET /analysis HTTP/1.1" 200 -
+2016-05-05 17:22:52 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:52] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:53 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:53] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:54 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:54] "GET /getversion?type=1&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:55 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:55] "GET /getversion?type=1&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:55 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:55] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:55 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:55] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:56 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:56] "GET /getversion?type=1&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:56 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:56] "GET /getversion?type=1&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:22:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:22:57] "GET /getversion?type=0&conc=-1&suit=-1 HTTP/1.1" 200 -
+2016-05-05 17:23:07 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:23:07] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:29:21 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 17:29:21 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:29:23 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:29:23] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:29:26 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:29:26] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:29:27 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:28 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:28 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:29 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:29 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:30 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:30 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:29:30] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:29:33 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:33 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:34 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:34 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:35 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:35 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:29:36 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:29:36] "GET /addscript HTTP/1.1" 200 -
+2016-05-05 17:30:49 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:30:49] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:31:04 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:06 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:06 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:06 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:07 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:07 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:31:08] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:31:08 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:09 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:10 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:10 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:11 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:11 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:31:12 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:31:12] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:31:54 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:31:54] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:32:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:32:02] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:32:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:32:05] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:33:04 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:04] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:33:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:08] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:33:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:08] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/jquery/jquery.min.js HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/js/main.js HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/js/bootbox.min.js HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/js/spin.js HTTP/1.1" 200 -
+2016-05-05 17:33:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:10] "GET /static/js/ladda.js HTTP/1.1" 200 -
+2016-05-05 17:33:11 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:11] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:33:13 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:13] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/jquery/jquery.min.js HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/js/bootbox.min.js HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/js/spin.js HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/js/ladda.js HTTP/1.1" 200 -
+2016-05-05 17:33:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:24] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:33:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:27] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:33:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:33:32] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/js/main.js HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/js/bootbox.min.js HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/js/spin.js HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/js/ladda.js HTTP/1.1" 304 -
+2016-05-05 17:34:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:27] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/js/main.js HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/js/bootbox.min.js HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/js/spin.js HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/js/ladda.js HTTP/1.1" 304 -
+2016-05-05 17:34:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:34:57] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/js/main.js HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/js/bootbox.min.js HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/js/spin.js HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/js/ladda.js HTTP/1.1" 304 -
+2016-05-05 17:35:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:35:16] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:36:38 _internal.py[line:87] INFO  * Detected change in '/root/websnail/app/main/forms.py', reloading
+2016-05-05 17:36:38 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:37:38 _internal.py[line:87] INFO  * Detected change in '/root/websnail/app/main/forms.py', reloading
+2016-05-05 17:37:39 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services HTTP/1.1" 500 -
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-05 17:39:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:39:31] "GET /services?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:40:26 _internal.py[line:87] INFO  * Detected change in '/root/websnail/app/main/serviceViews.py', reloading
+2016-05-05 17:40:26 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/js/main.js HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/js/bootbox.min.js HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/js/spin.js HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/js/ladda.js HTTP/1.1" 304 -
+2016-05-05 17:40:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:40:28] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "POST /services HTTP/1.1" 500 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "GET /services?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "GET /services?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "GET /services?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "GET /services?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "GET /services?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "GET /services?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-05 17:41:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:05] "GET /services?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:41:39 _internal.py[line:87] INFO  * Detected change in '/root/websnail/app/main/serviceViews.py', reloading
+2016-05-05 17:41:39 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:41:44 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:44] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:41:50 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:50] "POST /services HTTP/1.1" 302 -
+2016-05-05 17:41:50 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:41:50] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/js/main.js HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/js/bootbox.min.js HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/js/spin.js HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/js/ladda.js HTTP/1.1" 304 -
+2016-05-05 17:42:43 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:42:43] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:44:03 _internal.py[line:87] INFO  * Detected change in '/root/websnail/app/models.py', reloading
+2016-05-05 17:44:03 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:44:28 _internal.py[line:87] INFO  * Detected change in '/root/websnail/app/models.py', reloading
+2016-05-05 17:44:28 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:45:00 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 17:45:00 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:45:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:02] "GET /services HTTP/1.1" 302 -
+2016-05-05 17:45:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:02] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:45:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:02] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:45:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:02] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:45:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:02] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:45:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:02] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:45:03 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:03] "POST /login HTTP/1.1" 500 -
+2016-05-05 17:45:03 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:03] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2016-05-05 17:45:03 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:03] "GET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2016-05-05 17:45:03 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:03] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2016-05-05 17:45:04 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:04] "GET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2016-05-05 17:45:04 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:04] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:45:04 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:04] "GET /login?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+2016-05-05 17:45:04 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:04] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2016-05-05 17:45:09 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:09] "GET /register HTTP/1.1" 200 -
+2016-05-05 17:45:13 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:13] "POST /register HTTP/1.1" 302 -
+2016-05-05 17:45:13 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:13] "GET /login HTTP/1.1" 200 -
+2016-05-05 17:45:22 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:22] "POST /login HTTP/1.1" 302 -
+2016-05-05 17:45:22 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:22] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:45:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:24] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:45:30 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:30] "POST /services HTTP/1.1" 302 -
+2016-05-05 17:45:30 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:45:30] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/js/main.js HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/js/bootbox.min.js HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/js/spin.js HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/js/ladda.js HTTP/1.1" 304 -
+2016-05-05 17:46:08 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:08] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/jquery/jquery.min.js HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/css/bootstrap-multiselect.css HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/js/bootstrap-multiselect.js HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/js/main.js HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/js/bootbox.min.js HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/js/ladda.js HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/js/spin.js HTTP/1.1" 304 -
+2016-05-05 17:46:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:38] "GET /static/imgs/favicon.ico HTTP/1.1" 200 -
+2016-05-05 17:46:55 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:46:56 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:46:57 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:46:57 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:46:58 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:46:58 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:46:58 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:46:58] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:47:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:47:02] "GET /services HTTP/1.1" 200 -
+2016-05-05 17:47:06 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:08 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:08 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:09 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:09 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:10 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:47:10] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:47:13 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:15 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:16 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:16 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:17 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:17 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:18 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:47:18] "GET /addscript HTTP/1.1" 200 -
+2016-05-05 17:47:37 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:39 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:40 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:40 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:40 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:41 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:47:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:47:41] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:48:35 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:48:35] "POST /scripts HTTP/1.1" 302 -
+2016-05-05 17:48:35 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:48:36 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:48:37 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:48:37 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:48:38 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:48:38 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:48:39 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:48:39] "GET /editscript/1 HTTP/1.1" 200 -
+2016-05-05 17:49:00 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:49:00] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:49:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:49:24] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:49:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:49:27] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:49:56 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:49:56] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:49:59 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:49:59] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:50:00 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:50:00] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:50:03 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:50:03] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:50:04 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:50:04] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:50:27 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:50:27] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:50:29 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:50:29] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:50:59 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:50:59] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:52:01 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:52:01] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:52:06 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:52:06] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:52:34 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:52:34] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:55:23 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:55:23] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:55:49 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:55:49] "POST /editscript/1 HTTP/1.1" 302 -
+2016-05-05 17:55:49 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:51 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:51 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:52 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:52 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:52 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:53 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:55:53] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:55:55 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:56 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:57 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:57 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:57 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:58 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:55:58 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:55:58] "GET /editscript/1 HTTP/1.1" 200 -
+2016-05-05 17:56:02 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:03 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:03 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:03 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:04 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:04 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:05 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:05] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:56:07 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:07 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:08 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:08 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:08 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:09 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:09 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:09] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:56:10 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:12 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:13 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:13 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:13 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:14 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:14 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:14] "GET /editscript/1 HTTP/1.1" 200 -
+2016-05-05 17:56:16 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:16] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:56:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:24] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:56:34 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:34] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:56:42 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:42] "POST /tests HTTP/1.1" 200 -
+2016-05-05 17:56:45 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:45] "POST /editscript/1 HTTP/1.1" 302 -
+2016-05-05 17:56:45 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:46 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:48 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:48 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:48 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:50 connectionpool.py[line:203] INFO Starting new HTTP connection (1): cdnjs.cloudflare.com
+2016-05-05 17:56:51 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:51] "GET /scripts HTTP/1.1" 200 -
+2016-05-05 17:56:54 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:54] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:56:57 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:56:57] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:57:10 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:10] "POST /testjobs HTTP/1.1" 200 -
+2016-05-05 17:57:13 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:13] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:57:31 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:31] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:57:36 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:36] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:57:36 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:36] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:57:37 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:37] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:57:37 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:37] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:57:40 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:57:40] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:58:02 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:02] "POST /testjobs HTTP/1.1" 200 -
+2016-05-05 17:58:03 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:03] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:58:06 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:06] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:58:26 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 17:58:26 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:58:29 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:29] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:58:29 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:29] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:58:30 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:30] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:58:30 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:30] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:58:33 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:58:33] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:59:19 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 17:59:19 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 17:59:21 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:59:21] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 17:59:21 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:59:21] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:59:24 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:59:24] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 17:59:28 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:59:28] "POST /testjobs HTTP/1.1" 200 -
+2016-05-05 17:59:29 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:59:29] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 17:59:32 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 17:59:32] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 18:01:27 _internal.py[line:87] INFO  * Detected change in '/root/websnail/app/main/jobViews.py', reloading
+2016-05-05 18:01:27 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 18:01:32 _internal.py[line:87] INFO  * Running on http://0.0.0.0:8899/ (Press CTRL+C to quit)
+2016-05-05 18:01:32 _internal.py[line:87] INFO  * Restarting with stat
+2016-05-05 18:01:35 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 18:01:35] "GET /testjobs HTTP/1.1" 200 -
+2016-05-05 18:01:35 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 18:01:35] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 18:01:38 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 18:01:38] "GET /getStatus HTTP/1.1" 200 -
+2016-05-05 18:01:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 18:01:41] "POST /testjobs HTTP/1.1" 200 -
+2016-05-05 18:01:41 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 18:01:41] "GET /static/jquery/jquery.min.map HTTP/1.1" 404 -
+2016-05-05 18:01:44 _internal.py[line:87] INFO 61.171.39.154 - - [05/May/2016 18:01:44] "GET /getStatus HTTP/1.1" 200 -

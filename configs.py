@@ -1,6 +1,10 @@
+import os
+
 class TestingConfig:
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root@localhost:3306/websnail'
+    #SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root@localhost:3306/websnail'
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:%s@%s:3306/websnail" %(os.environ.get("MYSQL_PASSWORD"),os.environ.get("HOST_NAME"))
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
     SECRET_KEY = 'what does the fox say?'
     CODEMIRROR_LANGUAGES = ['python']
     CODEMIRROR_ADDONS = (
@@ -10,10 +14,8 @@ class TestingConfig:
     WTF_CSRF_SECRET_KEY = "whatever"
 
     SERVICE_TYPES = [
-            'OCR',
-            'NLP',
-            'SEARCH',
-            '1v1'
+            '测试环境',
+            '生产环境'
         ]
 
     @staticmethod

@@ -10,7 +10,7 @@
 		
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="modalTitle">新增测试服务</h4>
+				<h4 class="modal-title" id="modalTitle">新增接口</h4>
 			</div>
 			
 			<div class="modal-body">
@@ -21,9 +21,6 @@
 					</div>
 					<div id="addressdiv" style="margin-bottom:10px">
 					{{ form.address.label }}{{ form.address(class="form-control") }}
-					</div>
-					<div style="margin-bottom:10px">
-					{{ form.type.label }}{{ form.type(class="form-control") }}
 					</div>
 				<form>
 			</div>
@@ -37,7 +34,7 @@
 
 <div class="container">
 	<div class="page-header">
-		<h2 class="ng-binding">测试服务配置</h2>
+		<h2 class="ng-binding">测试接口配置</h2>
 		{% for message in get_flashed_messages() %}
 			{% if message.type == 'error' %}
 				<div class="alert alert-danger alert-dismissible fade in" role="alert">
@@ -53,17 +50,16 @@
 	</div>
 
 	<div>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTypeModal">新增测试服务</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTypeModal">新增测试接口</button>
 	</div>
 	
 	<div style="margin-top:10px;">
 	    <table name="table1" class="table table-striped">
 	        <tbody>
 	        <tr>
-	            <th style="width:10%">ID</th>
-	            <th style="width:15%">测试服务名称</th>
-	            <th style="width:15%">测试服务地址</th>
-	            <th style="width:15%">服务类型</th>
+	            <th style="width:5%">ID</th>
+	            <th style="width:15%">接口名称</th>
+	            <th style="width:55%">接口地址(url)</th>
 	            <th style="width:15%">创建时间</th>
 	            <th style="width:10%">&nbsp&nbsp&nbsp&nbsp操作</th>
 	        </tr>
@@ -74,7 +70,6 @@
 					<td class="ng-binding">{{serv.id}}</td>
 					<td class="ng-binding">{{serv.name}}</td>
 					<td class="ng-binding">{{serv.address}}</td>
-					<td class="ng-binding">{{serv.typename}}</td>
 					<td class="ng-binding">{{serv.createdtime}}</td>
 					<td class="ng-bliding">
 						<a class="btn btn-danger" onclick="del({{ serv.id }})">删除</button>

@@ -31,13 +31,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
-			<li><a href="/services" data-toggle="tooltip" data-placement="bottom" title="第一步:新建接口服务(IP地址)"><font color="">接口服务管理</font></a></li>
+			<li><a href="/services" data-toggle="tooltip" data-placement="bottom" title="第一步:新增接口(IP地址)"><font color="">接口管理</font></a></li>
 			<li><a href="/scripts" data-toggle="tooltip" data-placement="bottom" title="第二步:新增测试脚本"><font color="">测试脚本管理</font></a></li>
 			<li><a href="/testjobs" data-toggle="tooltip" data-placement="bottom" title="第三步:新建测试任务"><font color="">新建测试任务</font></a></li>
-			<li><a href="/testsuits" data-toggle="tooltip" data-placement="bottom" title="仅OCR/NLP/SEARCH需要这项">测试集管理</a></li>
-			
 			<li><a href="/analysis" data-toggle="tooltip" data-placement="bottom" title="历史测试报告图形展示">测试报告分析</a></li>
-			<li><a href="/downimgs" data-toggle="tooltip" data-placement="bottom" title="用于OCR">上传图片页面</a></li>
 		</ul>
 		<ul class="nav navbar-nav" style="margin-left:800px">
 			{% if current_user.is_authenticated %}
