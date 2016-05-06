@@ -13,11 +13,6 @@ class TestingConfig:
     CODEMIRROR_THEME = 'mbo'
     WTF_CSRF_SECRET_KEY = "whatever"
 
-    SERVICE_TYPES = [
-            '测试环境',
-            '生产环境'
-        ]
-
     @staticmethod
     def init_app(app):
         pass

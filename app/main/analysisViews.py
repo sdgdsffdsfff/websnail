@@ -16,7 +16,7 @@ def analysis():
 	r_args = request.args
 	if r_args:
 		try:
-			jobs = Job.query.filter(db.and_(Job.servicetype==r_args.get('type'),Job.status==2,Job.concurrent==r_args.get('conc'),Job.relatesuitname==r_args.get('suit'))).all()[-5:]
+			jobs = Job.query.filter(db.and_(Job.status==2,Job.concurrent==r_args.get('conc'))).all()[-5:]
 			reports = [Report.query.filter_by(jobid=job.id).first() for job in jobs]
 		except:
 			errorinfo = traceback.format_exc()
@@ -33,11 +33,9 @@ def analysis():
 		versions = []
 
 		try:
-			reports = [report for report in Report.query.filter_by(servicetype=type).order_by(Report.id.desc()).limit(5).all() if Job.query.filter_by(id=report.jobid).filter_by(status=2).first() is not None][::-1]
+			reports = [report for report in Report.query.order_by(Report.id.desc()).limit(5).all() if Job.query.filter_by(id=report.jobid).filter_by(status=2).first() is not None][::-1]
 			jobs = [Job.query.filter_by(id=report.jobid).first() for report in reports]
-			servicetypes = [(i+1,v.typename) for i,v in enumerate(Servicetype.query.all())]
 			concurrents = [(j+1,k.concurrent) for j,k in enumerate(Job.query.filter_by(status=2).group_by(Job.concurrent).all())]
-			suits = [(l+1,m.name) for l,m in enumerate(Testsuit.query.filter_by(status=0).all())]
 		except:
 			errorinfo = traceback.format_exc()
 			logging.error("数据库异常："+errorinfo)
@@ -46,24 +44,13 @@ def analysis():
 
 		if not r_args:
 			form = AnalysisForm()
-			form.servicetype.choices = servicetypes
 			form.concurrent.choices = concurrents
-			form.suit.choices = suits
-			form.serviceversion.choices = versions
 	
 	if request.method == 'POST':
-		for i,j in form.servicetype.choices:
-			if i == int(form.servicetype.data):
-				servicetype = j
-				serviceindex = i-1
 		for k,l in form.concurrent.choices:
 			if k == int(form.concurrent.data):
 				concurrent = l
 				concurrentindex = k-1
-		for m,n in form.suit.choices:
-			if m == int(form.suit.data):
-				suit = n
-				suitindex = m-1
 
 		try:
 			if not form.serviceversion.data:
@@ -92,8 +79,7 @@ def getTableData(jobs,reports):
 
 	for i,v in enumerate(reports):
 		try:
-			suit = Testsuit.query.filter_by(id=jobs[i].relatesuitid).first()
-			tableData[i] = [jobs[i].serviceversion,jobs[i].concurrent,suit.name,suit.size,v.averagetime,v.throught,v.customtimers]
+			tableData[i] = [jobs[i].serviceversion,jobs[i].concurrent,v.averagetime,v.throught,v.customtimers]
 		except:
 			errorinfo = traceback.format_exc()
 			logging.error("数据库异常："+errorinfo)
@@ -259,29 +245,16 @@ def getVersion(datadict=None):
 	jobs = None
 	datas = request.args if datadict is None else datadict
 	
-	servicetypes = []
 	concurrents = []
-	suits = []
 
 	try:
-		servicetypes = [(i,v.typename) for i,v in enumerate(Servicetype.query.all())]
 		concurrents = [(j,k.concurrent) for j,k in enumerate(Job.query.group_by(Job.concurrent).all())]
-		suits = [(l,m.name) for l,m in enumerate(Testsuit.query.all())]
-
-		for i,v in servicetypes:
-			if i == int(datas.get('type')):
-				jobs = Job.query.filter_by(servicetype=v).filter_by(status=2)
-				break
 
 		for k,l in concurrents:
 			if k == int(datas.get('conc')):
 				jobs = jobs.filter_by(concurrent=l)
 				break
 
-		for m,n in suits:
-			if m == int(datas.get('suit')):
-				jobs = jobs.filter_by(relatesuitname=n).all()
-				break
 	except:
 		errorinfo = traceback.format_exc()
 		logging.error("数据库异常："+errorinfo)

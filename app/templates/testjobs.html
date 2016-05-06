@@ -2,7 +2,6 @@
 {% block title %}测试任务{% endblock %}
 
 {% block body %}
-{{ super() }}
 <!-- Modal -->
 {% if jobform %}
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -23,12 +22,6 @@
 						<div style="float:left;display:inline;margin-left:10px;width:180px">
 							{{ jobform.selectfile.label}} {{jobform.selectfile(class="form-control")}}
 						</div>
-						<div style="float:left;display:inline;margin-left:10px;width:180px">
-							{{ jobform.suits.label}} {{jobform.suits(class="form-control")}}
-						</div>
-					</div>
-					<div id="serviceversiondiv" style="margin-top:10px;">
-						{{ jobform.serviceversion.label}} {{jobform.serviceversion(class="form-control")}}
 					</div>
 					<div id="concurrentdiv" style="margin-top:10px;">
 						{{ jobform.concurrent.label}} {{jobform.concurrent(class="form-control")}}
@@ -50,34 +43,19 @@
 </div>
 {% endif %}
 <!--   =================================上面是新增的模态框=======================        -->
-<div class="container">
-    <div class="page-header">
-        <h2 class="ng-binding">测试任务</h2>
-			{% for message in get_flashed_messages() %}
-				{% if message.type == 'error' %}
-					<div class="alert alert-danger alert-dismissible fade in" role="alert">
-				{% else %}
-					<div class="alert alert-success alert-dismissible fade in" role="alert">
-				{% endif %}
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-						<h5>
-							{{ message.message }}
-						</h5>
+
+<div id="progressdiv" style="{% if not showstatus %}display:none{% endif %}">
+	<div class="modal-body">
+		<div>
+			<div class="form-group">
+				<div class="progress" style="margin-top:10px;">
+					<div id="progressbar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%;">已完成：0%
 					</div>
-			{% endfor %}
-	<div id="progressdiv" style="{% if not showstatus %}display:none{% endif %}">
-		<div class="modal-body">
+				</div>
+			</div>
 			<div>
-				<div class="form-group">
-					<div class="progress" style="margin-top:10px;">
-						<div id="progressbar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%;">已完成：0%
-						</div>
-					</div>
-				</div>
-				<div>
-				<!-- here comes the result -->
-					<p id="runningresult" style="font-family:verdana;font-size:80%;color:#0000EE">正在获取运行数据...</p>
-				</div>
+			<!-- here comes the result -->
+				<p id="runningresult" style="font-family:verdana;font-size:80%;color:#0000EE">正在获取运行数据...</p>
 			</div>
 		</div>
 	</div>
@@ -91,30 +69,26 @@
     <table name="table1" class="table table-striped">
         <tbody>
         <tr>
-            <th style="width:5%">ID</th>
-            <th style="width:10%">接口地址</th>
-			<th style="width:10%">版本号</th>
-            <th style="width:10%">测试脚本</th>
-            <th style="width:10%">并发量</th>
-            <th style="width:10%">并发时间</th>
-            <th style="width:10%">循环次数</th>
-            <th style="width:10%">测试集</th>
-            <th style="width:10%">创建时间</th>
-            <th style="width:15%">&nbsp&nbsp&nbsp&nbsp操作</th>
+            <th style="width:5%" class="center">ID</th>
+            <th style="width:30%">接口地址</th>
+            <th style="width:16%" class="center">测试脚本</th>
+            <th style="width:8%" class="center">并发量</th>
+            <th style="width:8%" class="center">并发时间</th>
+            <th style="width:8%" class="center">循环次数</th>
+            <th style="width:12%" class="center">创建时间</th>
+            <th style="width:13%" class="center">操作</th>
         </tr>
 {% if jobs %}
 	{% for job in jobs %}
-		    <tr class="ng-scope">
-		        <td class="ng-binding">{{job.id}}</td>
+		    <tr class="ng-scope" id="job_{{job.id}}">
+		        <td class="ng-binding center">{{job.id}}</td>
 		        <td class="ng-binding">{{job.address}}</td>
-		        <td class="ng-binding">{{job.serviceversion}}</td>
-		        <td class="ng-binding">{{job.filename}}</td>
-		        <td class="ng-binding">{{job.concurrent}}</td>
-		        <td class="ng-binding">{{job.run_time}}</td>
-		        <td class="ng-binding">{{job.run_num}}</td>
-				<td class="ng-binding">{{job.relatesuitname}}</td>
-		        <td class="ng-binding">{{job.createdtime}}</td>
-		        <td class="ng-bliding">
+		        <td class="ng-binding center">{{job.filename}}</td>
+		        <td class="ng-binding center">{{job.concurrent}}</td>
+		        <td class="ng-binding center">{{job.run_time}}</td>
+		        <td class="ng-binding center">{{job.run_num}}</td>
+		        <td class="ng-binding center">{{job.createdtime}}</td>
+		        <td class="ng-bliding center">
 			{% if job.status == 0 %}
 				<button class="btn btn-danger"  value="运行失败" disabled="true">运行异常</button>
 				<button class="btn btn-danger" onclick="del({{job.id}})">删除</button>
@@ -139,7 +113,7 @@
 					</ul>
 				</div>
 			{% elif job.status == 2 %}
-				<a href="/viewreport/{{job.id}}" class="btn btn-info" target="_blank">查看报告</a>
+				<a href="/viewreport/{{job.id}}" class="btn btn-info">查看报告</a>
 				<button class="btn btn-danger" onclick="del({{job.id}})">删除</button>
 			{% endif %}
 				</td>
@@ -152,43 +126,33 @@
 
 </div>
 </div>
-<script type="text/javascript">introJs().start();</script>
 <script language="javascript">
 	window.onload = getRunningStatus;
 	function del(id) {
-		bootbox.confirm("是否确认删除记录？",function(result){
-			if(result) {
-                $.get('/deljob/'+id,function(data){
-                    if (data =='success') {
-				        history.go(0);
-                    }
-                });
-			}else{
-				console.log("choice false");
-			}
+		layer.confirm("是否确认删除记录？",{
+			btn:["确定","取消"]
+		},function(){
+			$.get('/deljob/'+id,function(data){
+				if(data.result) {
+					$("#job_"+id).remove();
+					layer.msg("删除成功")
+				}else{
+					layer.msg("删除失败:"+data.errorMsg)
+				}
+			});
+		},function(){
+			layer.msg("取消删除")
 		});
 	}
 	
 	function validate_on_submit() {
 		ispass = true;
-		var serviceversion = document.getElementById("serviceversion");
-		var serviceversiondiv = document.getElementById("serviceversiondiv");
 		var concurrent = document.getElementById("concurrent");
 		var concurrentdiv = document.getElementById("concurrentdiv");
 		var run_time = document.getElementById("run_time");
 		var run_timediv = document.getElementById("run_timediv");
 		var run_num = document.getElementById("run_num");
 		var run_numdiv = document.getElementById("run_numdiv");
-		
-		if(serviceversion.value == ''){
-			serviceversiondiv.setAttribute("class", "form-group has-error");
-			serviceversion.placeholder = "请输入版本信息";
-			ispass = false;
-		}else{
-			if(serviceversiondiv.hasAttribute('class')) {
-				serviceversiondiv.setAttribute("class", "");
-			}
-		}
 		
 		if(concurrent.value == '') {
 			concurrentdiv.setAttribute("class", "form-group has-error");

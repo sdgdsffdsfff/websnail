@@ -1,0 +1,62 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/node-v5.9.1-linux-x64/bin/node',
+1 verbose cli   '/usr/node-v5.9.1-linux-x64/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'bower' ]
+2 info using npm@3.7.3
+3 info using node@v5.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData bower
+8 silly fetchNamedPackageData bower
+9 silly mapToRegistry name bower
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/bower
+13 verbose request uri https://registry.npmjs.org/bower
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 3:47:31 PM
+16 verbose request id cfd07f491ef0e519
+17 http request GET https://registry.npmjs.org/bower
+18 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+19 info attempt registry request try #2 at 3:47:46 PM
+20 http request GET https://registry.npmjs.org/bower
+21 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+22 info attempt registry request try #3 at 3:48:46 PM
+23 http request GET https://registry.npmjs.org/bower
+24 silly fetchPackageMetaData Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+24 silly fetchPackageMetaData     at errnoException (dns.js:26:10)
+24 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:77:26)
+24 silly fetchPackageMetaData  error for bower { [Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443]
+24 silly fetchPackageMetaData   code: 'ENOTFOUND',
+24 silly fetchPackageMetaData   errno: 'ENOTFOUND',
+24 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+24 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+24 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+24 silly fetchPackageMetaData   port: 443 }
+25 silly rollbackFailedOptional Starting
+26 silly rollbackFailedOptional Finishing
+27 silly runTopLevelLifecycles Starting
+28 silly runTopLevelLifecycles Finishing
+29 silly install printInstalled
+30 verbose stack Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+30 verbose stack     at errnoException (dns.js:26:10)
+30 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:77:26)
+31 verbose cwd /root/websnail/app/static
+32 error Linux 2.6.32-431.23.3.el6.x86_64
+33 error argv "/usr/node-v5.9.1-linux-x64/bin/node" "/usr/node-v5.9.1-linux-x64/bin/npm" "install" "-g" "bower"
+34 error node v5.9.1
+35 error npm  v3.7.3
+36 error code ENOTFOUND
+37 error errno ENOTFOUND
+38 error syscall getaddrinfo
+39 error network getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443
+40 error network This is most likely not a problem with npm itself
+40 error network and is related to network connectivity.
+40 error network In most cases you are behind a proxy or have bad network settings.
+40 error network
+40 error network If you are behind a proxy, please make sure that the
+40 error network 'proxy' config is set properly.  See: 'npm help config'
+41 verbose exit [ 1, true ]

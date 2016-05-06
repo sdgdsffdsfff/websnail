@@ -22,6 +22,9 @@
 					<div id="addressdiv" style="margin-bottom:10px">
 					{{ form.address.label }}{{ form.address(class="form-control") }}
 					</div>
+					<div id="addressdiv" style="margin-bottom:10px">
+					{{ form.methodtype.label }}{{ form.methodtype(class="form-control") }}
+					</div>
 				<form>
 			</div>
 			<div class="modal-footer">
@@ -32,99 +35,86 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div class="container">
-	<div class="page-header">
-		<h2 class="ng-binding">测试接口配置</h2>
-		{% for message in get_flashed_messages() %}
-			{% if message.type == 'error' %}
-				<div class="alert alert-danger alert-dismissible fade in" role="alert">
-			{% else %}
-				<div class="alert alert-success alert-dismissible fade in" role="alert">
-			{% endif %}
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-					<h5>
-						{{ message.message }}
-					</h5>
-				</div>
-		{% endfor %}
-	</div>
+<div>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTypeModal">新增测试接口</button>
+</div>
 
-	<div>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTypeModal">新增测试接口</button>
-	</div>
-	
-	<div style="margin-top:10px;">
-	    <table name="table1" class="table table-striped">
-	        <tbody>
-	        <tr>
-	            <th style="width:5%">ID</th>
-	            <th style="width:15%">接口名称</th>
-	            <th style="width:55%">接口地址(url)</th>
-	            <th style="width:15%">创建时间</th>
-	            <th style="width:10%">&nbsp&nbsp&nbsp&nbsp操作</th>
-	        </tr>
-	{% if services %}
-		{% for serv in services %}
-			{% if serv.status != -1 %}
-				<tr class="ng-scope">
-					<td class="ng-binding">{{serv.id}}</td>
-					<td class="ng-binding">{{serv.name}}</td>
-					<td class="ng-binding">{{serv.address}}</td>
-					<td class="ng-binding">{{serv.createdtime}}</td>
-					<td class="ng-bliding">
-						<a class="btn btn-danger" onclick="del({{ serv.id }})">删除</button>
-					</td>
-				</tr>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-	        </tbody>
-	    </table>
-	</div>
+<div style="margin-top:10px;">
+    <table name="table1" class="table table-striped">
+        <tbody>
+        <tr>
+            <th style="width:5%;" class="center">ID</th>
+            <th style="width:15%" class="center">接口名称</th>
+            <th style="width:10%" class="center">请求类型</th>
+            <th style="width:45%" class="center">接口地址(url)</th>
+            <th style="width:15%" class="center">创建时间</th>
+            <th style="width:10%" class="center">操作</th>
+        </tr>
+{% if services %}
+	{% for serv in services %}
+		{% if serv.status != -1 %}
+			<tr class="ng-scope" id="service_{{serv.id}}">
+				<td class="ng-binding center">{{serv.id}}</td>
+				<td class="ng-binding center">{{serv.name}}</td>
+				<td class="ng-binding center">{{serv.method}}</td>
+				<td class="ng-binding center">{{serv.address}}</td>
+				<td class="ng-binding center">{{serv.createdtime}}</td>
+				<td class="ng-bliding center">
+					<a class="btn btn-danger" onclick="del({{ serv.id }})">删除</button>
+				</td>
+			</tr>
+		{% endif %}
+	{% endfor %}
+{% endif %}
+        </tbody>
+    </table>
 </div>
 
 <script language="javascript">
 	function del(id) {
-		bootbox.confirm("是否确认删除服务？",function(result){
-			if(result) {
-                $.get('/delservice/'+id,function(data){
-                    if (data == "success") {
-				        location.reload(0);
-                    }
-                });
-			}else{
-				console.log("choice false");
-			}
+		layer.confirm("是否确认删除服务？",{
+			btn:['确定','取消']
+		},function(){
+			$.get('/delservice/'+id,function(data){
+				if(data.result){
+					$("#service_"+id).remove();
+					layer.msg("删除成功")
+				}else{
+					layer.msg("删除失败:"+data.errorMsg)
+				}
+			});
+		},function(){
+			layer.msg("取消删除")
 		});
 	}
 	
 	function validate_on_submit() {
 		var ispass = true;
-		var name = document.getElementById("name");
-		var namediv = document.getElementById("namediv");
-		var address = document.getElementById("address");
-		var addressdiv = document.getElementById("addressdiv");
-		if(name.value == '') {
-			namediv.setAttribute("class", "form-group has-error");
-			name.placeholder = "请输入服务名称";
+		var name = $("#name");
+		var namediv = $("#namediv");
+		var address = $("#address");
+		var addressdiv = $("#addressdiv");
+		if(!name.val()) {
+			namediv.attr("class", "form-group has-error");
+			name.attr("placeholder","请输入服务名称");
 			ispass = false;
 		}else {
-			namediv.setAttribute("class", "");
-			name.placeholder = "";
+			namediv.attr("class", "");
+			name.attr("placeholder","");
 		}
-		if(address.value == '') {
-			addressdiv.setAttribute("class", "form-group has-error");
-			address.placeholder = "请输入服务地址";
+		if(!address.val()) {
+			addressdiv.attr("class", "form-group has-error");
+			address.attr("placeholder","请输入服务地址");
 			ispass = false;
 		}else {
-			addressdiv.setAttribute("class", "");
-			address.placeholder = "";
+			addressdiv.attr("class", "");
+			address.attr("placeholder","");
 		}
 		
 		if (ispass) {
-			var submit = document.getElementById('submit');
-			submit.onclick = null;
-			submit.innerHTML = "正在提交..";
+			var submit = $('#submit');
+			submit.attr("disabled","disabled");
+			submit.html("正在提交..");
 			$("#serviceform").submit();
 		}
 	}

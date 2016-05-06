@@ -14,11 +14,6 @@ manager.add_command('db',MigrateCommand)
 @manager.command
 def dbinit():
 	db.create_all()
-	for type in app.config['SERVICE_TYPES']:
-		servicetype = Servicetype()
-		servicetype.typename = type
-		db.session.add(servicetype)
-	db.session.commit()
 	print('ok')
 
 

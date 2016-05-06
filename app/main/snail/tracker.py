@@ -4,15 +4,15 @@ import math
 from collections import Counter,OrderedDict
 import sys
 class Report(object):
-	def __init__(self,id,logpath,ip,reportfile):
+	def __init__(self,id,logpath,url,reportfile):
 		self.id = id
 		self.logpath = logpath
-		self.ip = ip
+		self.url = url
 		self.report = OrderedDict() 
 		self.reportfile = reportfile
 
 	def generateReport(self):
-		result = Results(self.logpath,self.ip)
+		result = Results(self.logpath)
 		span_list=[]
 		elapsed_list=[]
 		for i in result.status_list:
@@ -37,7 +37,7 @@ class Report(object):
 		self.report['errorcounter'] = {}
 		self.report['customtimers'] = {}
 		self.report['customscore'] = {}
-		print ('ip: %s '%(self.ip))
+		print ('url: %s '%(self.url))
 		print ('logpath: %s'%(self.logpath))
 		print ('Total requests: %d'%(result.total_num))
 		print ('average: %.3f throught: %.2f'%(average,throught))
@@ -65,15 +65,15 @@ class Report(object):
 			json.dump(self.report,f)
 
 class Results():
-	def __init__(self,logpath,ip):
+	def __init__(self,logpath):
 		self.logpath = logpath
-		self.ip=ip
 		self.total_num=0
 		self.error_num=0
 		self.counter={}
 		self.error_counter=Counter()
 		self.score={}
 		self.status_list=self.__parse_file()
+		
 	def __parse_file(self):
 		print("Results.logpath:",self.logpath)
 		f = open(self.logpath,'rb')

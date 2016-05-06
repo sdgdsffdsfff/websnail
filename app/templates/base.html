@@ -11,45 +11,90 @@
   {% block csss %}
   	<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/static/css/bootstrap-multiselect.css">
-	<link href="//cdn.bootcss.com/intro.js/1.0.0/introjs.min.css" rel="stylesheet">
+	<link href="/static/css/templatemo-style.css" rel="stylesheet">
+    <style>
+        #maincontent{
+            background:url("/static/imgs/mainback.png")
+        }
+        .center{
+			text-align:center;
+        }
+    </style>
   {% endblock %}
   {% block scripts %}
   	<script src="/static/jquery/jquery.min.js"></script>
   	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
   	<script src="/static/js/bootstrap-multiselect.js"></script>
   	<script src="/static/js/main.js"></script>
-  	<script src="/static/js/bootbox.min.js"></script>
-	<script src="//cdn.bootcss.com/intro.js/1.0.0/intro.min.js"></script>
-	<script src="/static/js/spin.js"></script>
-	<script src="/static/js/ladda.js"></script>
+  	<script src="/static/layer/layer.js"></script>
   {% endblock %}
 {% endblock %}
 </head>
 <body>
+<div class="templatemo-flex-row" id="navdiv">
+    <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+            <h1>性能测试平台</h1>
+        </header>
+        <!-- Search box -->
+        <form class="templatemo-search-form" action="http://www.baidu.com/s" target="_blank" role="search">
+            <div class="input-group">
+                <button type="submit" class="fa fa-search"></button>
+                <input type="text" class="form-control" placeholder="Search by Baidu" name="wd" id="srch-term">
+            </div>
+        </form>
+        <nav class="templatemo-left-nav">
+            <ul>
+                <li><a href="/services">接口管理</a></li>
+				<li><a href="/scripts">测试脚本管理</a></li>
+				<li><a href="/testjobs">测试任务管理</a></li>
+<!-- 				<li><a href="/analysis">测试报告分析</a></li> -->
+            </ul>
+        </nav>
+    </div>
+    <!-- Main content -->
+    <div id="maincontent" class="templatemo-content col-1 light-gray-bg">
+        <div style="height:40px;line-height:40px;">
+            {% if current_user.is_authenticated %}
+            <div style="text-align:center">
+                <span class="btn-group pull-right" style="margin-right:20px">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="color:black">hi,{{ current_user.email }}</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/logout">注销登录</a></li>
+                    </ul>
+                </span>
+            </div>
 
-{% block body %}
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<ul class="nav navbar-nav">
-			<li><a href="/services" data-toggle="tooltip" data-placement="bottom" title="第一步:新增接口(IP地址)"><font color="">接口管理</font></a></li>
-			<li><a href="/scripts" data-toggle="tooltip" data-placement="bottom" title="第二步:新增测试脚本"><font color="">测试脚本管理</font></a></li>
-			<li><a href="/testjobs" data-toggle="tooltip" data-placement="bottom" title="第三步:新建测试任务"><font color="">新建测试任务</font></a></li>
-			<li><a href="/analysis" data-toggle="tooltip" data-placement="bottom" title="历史测试报告图形展示">测试报告分析</a></li>
-		</ul>
-		<ul class="nav navbar-nav" style="margin-left:800px">
-			{% if current_user.is_authenticated %}
-			<li><a href="#">当前用户:{{ current_user.email }}</a></li>
-			<li><a href="/logout">注销</a></li>
-			{% endif %}
-		</ul>
-	</div>
-</nav>
-<div style="margin-bottom:50px"></div>
-{% endblock %}
+            {%else%}
+                <div class="pull-right" style="margin-right:20px"><a href="/login"><span class="glyphicon glyphicon-king"></span> 登 录</a></div>
+            {% endif %}
+        </div>
+        <div class="templatemo-content-container">
+            {% for message in get_flashed_messages() %}
+                {% if message.type == 'error' %}
+                    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+                {% else %}
+                    <div class="alert alert-success alert-dismissible fade in" role="alert">
+                {% endif %}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h7>
+                            <span class="glyphicon glyphicon-grain" style="align:center"> {{ message.message }}</span>
+                        </h7>
+                    </div>
+            {% endfor %}
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+    <!-- End of Main content -->
+    </div>
+</div>
 </body>
 <script language="javascript">
 	$(function () {
-		$('[data-toggle="tooltip"]').tooltip()
+		layer.config({
+			extend: 'extend/layer.ext.js'
+		});
 	})
 </script>
 </html>

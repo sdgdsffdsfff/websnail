@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
-{{ codemirror.include_codemirror() }}
+{{ codemirror.include_codemirror(height=300) }}
 {% endblock %}
 {% block title %}测试脚本{% endblock %}
 {% block body %}
-{{ super() }}
-
 <div class="modal fade newscriptmodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 	<div class="modal-dialog modal-lg">
-
 	
 		<div class="modal-content" style="width:1000px;">
 			<div class="modal-header">
@@ -22,20 +19,14 @@
 			<form id="newscriptform" method="post">
 				{{ form.csrf_token }}
 				<div class="row">
-					<div id="ipdiv" style="float:left;display:inline;margin-left:17px">
-					{{ form.ip.label }}{{ form.ip(class="form-control") }}
-					</div>
-					<div style="float:left;display:inline;margin-left:17px">
-					{{ form.path.label }}{{ form.path(class="form-control") }}
+					<div id="servicediv" style="float:left;display:inline;margin-left:17px">
+					{{ form.service.label }}{{ form.service(class="form-control",style="width:200px") }}
 					</div>
 					<div id="connect_timeoutdiv" style="float:left;display:inline;margin-left:17px">
 					{{ form.connect_timeout.label }}{{ form.connect_timeout(class="form-control") }}
 					</div>
 					<div id="response_timeoutdiv" style="float:left;display:inline;margin-left:17px">
 					{{ form.response_timeout.label }}{{ form.response_timeout(class="form-control") }}
-					</div>
-					<div style="float:left;display:inline;margin-left:17px">
-					{{ form.method.label }}{{ form.method(class="form-control") }}
 					</div>
 				</div>
 				<div class="row">
@@ -44,7 +35,7 @@
 					</div>
 				</div>
 				<div id="headersdiv" style="margin-top:20px;">
-					{{ form.headers.label }}{{ form.headers(class="form-control") }}
+					{{ form.headers(class="form-control") }}
 				</div>
 				<div style="display:'';margin-top:20px;">
 					{{ form.data.label }}{{ form.data(class="form-control") }}
@@ -63,48 +54,31 @@
 	</div>
 </div>
 
-<div class="container">
-    <div class="page-header">
-        <h2 class="ng-binding">测试脚本管理</h2>
-			{% for message in get_flashed_messages() %}
-				{% if message.type == 'error' %}
-					<div class="alert alert-danger alert-dismissible fade in" role="alert">
-				{% else %}
-					<div class="alert alert-success alert-dismissible fade in" role="alert">
-				{% endif %}
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-						<h5>
-							{{ message.message }}
-						</h5>
-					</div>
-			{% endfor %}
-    </div>
 <div>
-	<a href="/addscript" class="btn btn-primary">手写脚本</a>
-	<button data-toggle="modal" data-target=".newscriptmodal" class="btn btn-primary">生成脚本</button>
+	<button data-toggle="modal" data-target=".newscriptmodal" class="btn btn-primary">新增测试脚本</button>
 </div>
 
 <div style="margin-top:10px;">
     <table name="table1" class="table table-striped">
         <tbody>
         <tr>
-            <th style="width:10%">ID</th>
+            <th style="width:5%" class="center">ID</th>
             <th style="width:20%">脚本名称</th>
-            <th style="width:20%">脚本描述</th>
+            <th style="width:25%">脚本描述</th>
             <th style="width:20%">最后编辑时间</th>
             <th style="width:15%">创建时间</th>
             <th style="width:15%">&nbsp&nbsp&nbsp&nbsp操作</th>
         </tr>
 {% if scripts %}
 {% for script in scripts %}
-    <tr class="ng-scope">
-        <td class="ng-binding">{{script.id}}</td>
+    <tr class="ng-scope" id="script_{{script.id}}">
+        <td class="ng-binding center">{{script.id}}</td>
         <td class="ng-binding">{{script.filename}}</td>
         <td class="ng-binding">{{script.desc}}</td>
         <td class="ng-binding">{{script.lastedittime}}</td>
         <td class="ng-binding">{{script.createdtime}}</td>
         <td class="ng-bliding">
-	<a href="/editscript/{{script.id}}" class="btn btn-primary">编辑</a>
+	<a href="/editscript/{{script.id}}" class="btn btn-info">编辑</a>
 	<button class="btn btn-danger" onclick="del({{script.id}})">删除</button>
 		</td>
     </tr>
@@ -114,16 +88,12 @@
         </tbody>
     </table>
 </div>
-</div>
 
 <script language="javascript">
 	window.onload=setonclick;
 	function setonclick() {
 		showHeaders();
 		var need_headers = document.getElementById("need_headers");
-		var ip = document.getElementById('ip');
-		var connect_timeout = document.getElementById('connect_timeout');
-		var response_timeout = document.getElementById('response_timeout');
 		var returnfield = document.getElementById("returnfield");
 		returnfield.placeholder = "返回字段,例:status,message (用于统计该字段各值的分布，多个以','隔开，允许为空)"
 		need_headers.onclick=showHeaders;
@@ -133,7 +103,7 @@
 		var need_headers = document.getElementById("need_headers");
 		if(need_headers.checked) {
 			headersdiv.style.display = "";
-			headers.value = "{'content-type':'application/json'}"
+			headers.value = '{"content-type":"application/json"}'
 		} else{
 			headersdiv.style.display = "none";
 		}
@@ -142,22 +112,10 @@
 
 	function validate_on_submit() {
 		var ispass = true;
-		var ip = document.getElementById('ip');
-		var ipdiv = document.getElementById('ipdiv');
-		var path = document.getElementById('path');
 		var connect_timeout = document.getElementById('connect_timeout');
 		var connect_timeoutdiv = document.getElementById('connect_timeoutdiv');
 		var response_timeout = document.getElementById('response_timeout');
 		var response_timeoutdiv = document.getElementById('response_timeoutdiv');
-		if(ip.value == '') {
-			ipdiv.setAttribute("class", "form-group has-error");
-			ip.placeholder = "请输入请求地址";
-			ispass = false;
-		}else{
-			if(ipdiv.hasAttribute('class')) {
-				ipdiv.setAttribute("class", "");
-			}
-		}
 		
 		if(connect_timeout.value != '') {
 			if(checkNum(connect_timeout.value)){
@@ -216,16 +174,19 @@
 	}
 	
 	function del(id) {
-		bootbox.confirm("是否确认删除测试脚本？",function(result){
-			if(result) {
-                $.get('/delscript/'+id,function(data){
-                    if (data == "success"){
-                        history.go(0);
-                    }
-                });
-			}else{
-				console.log("choice false");
-			}
+		layer.confirm("是否确认删除测试脚本？",{
+			btn:["确认","取消"]
+		},function(){
+            $.get('/delscript/'+id,function(data){
+                if(data.result){
+                    $("#script_"+id).remove();
+                    layer.msg("删除成功")
+                }else{
+                	layer.msg("删除失败:"+data.errorMsg)
+                }
+            });
+		},function(){
+			layer.msg("取消删除")
 		});
 	}
 </script>

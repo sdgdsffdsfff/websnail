@@ -5,7 +5,7 @@ import sys
 import queue
 modules={}
 
-def test(scriptfile,case,ip,testsuit):
+def test(scriptfile,case,ip):
 	if case != None:
 		print("case is not None")
 		c = case
@@ -13,11 +13,6 @@ def test(scriptfile,case,ip,testsuit):
 		module_name = script_init(scriptfile)
 		try:
 			c = modules[module_name].Case3(ip)
-			if hasattr(c,'testsuit'):
-				setattr(c,'testsuit',testsuit)
-			else:
-				return({'status':'failed','errorinfo':'测试脚本Case3未指定testsuit!'})
-			print("suit length:%s" %len(c.testsuit))
 		except Exception as e:
 			print ('ERROR: can not find test script: %s.'%(scriptfile))
 			#sys.exit(1)

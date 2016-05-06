@@ -18,10 +18,10 @@ def getTestScript(scriptpath,scriptfile):
 	testScript = __import__(scriptfile[:-3])
 	return testScript
 
-def getcase(scriptpath,scriptfile,ip,testsuit):
+def getcase(scriptpath,scriptfile,url):
 	try:
 		testScript = getTestScript(scriptpath,scriptfile)
-		c = testScript.Case3(testsuit,ip)
+		c = testScript.Case3(url)
 		return c
 	except Exception as e:
 		print ('ERROR: get case error'+str(e))
@@ -29,7 +29,7 @@ def getcase(scriptpath,scriptfile,ip,testsuit):
 		sys.exit(1)
 
 class TestJob(Process):
-	def __init__(self,id,c_num,p_num,t_num,run_time,run_num,scriptpath,filename,ip,logpath,statusfile,reportfile,testsuit,controller):
+	def __init__(self,id,c_num,p_num,t_num,run_time,run_num,scriptpath,filename,url,logpath,statusfile,reportfile,controller):
 		Process.__init__(self)
 		self.id = id
 		self.c_num = c_num
@@ -39,11 +39,10 @@ class TestJob(Process):
 		self.run_num = run_num
 		self.scriptpath = scriptpath
 		self.filename = filename
-		self.ip = ip
+		self.url = url
 		self.logpath = logpath
 		self.statusfile = statusfile
 		self.reportfile = reportfile
-		self.testsuit = testsuit
 		self.processStatus = {}
 		self.controller = controller
 		self.queue = Queue()
@@ -54,16 +53,16 @@ class TestJob(Process):
 			
 	def runTest(self):
 		print("running test")
-		c = getcase(self.scriptpath,self.filename,self.ip,self.testsuit)
+		c = getcase(self.scriptpath,self.filename,self.url)
 		if c is None:
 			return({"id":self.id,"status":"failed","errorinfo":"Error：测试脚本异常！"})
-		result = core.test(self.filename,c,self.ip,self.testsuit)
+		result = core.test(self.filename,c,self.url)
 		return(result)
 	
 	def run(self):
 		c_num = self.p_num*self.t_num
-		print('\nConcurrent(autofit): %d, Ip: %s, Run_time: %d, Run_loop: %s, Script: %s'%(c_num,self.ip,self.run_time,self.run_num,self.filename))
-		c = getcase(self.scriptpath,self.filename,self.ip,self.testsuit)
+		print('\nConcurrent(autofit): %d, Url: %s, Run_time: %d, Run_loop: %s, Script: %s'%(c_num,self.url,self.run_time,self.run_num,self.filename))
+		c = getcase(self.scriptpath,self.filename,self.url)
 
 		process_group=[]
 
@@ -72,7 +71,7 @@ class TestJob(Process):
 		r.start()
 	#start
 		for i in range(self.p_num):
-			p=core.Multi_p(self.queue,i,self.filename,self.t_num,0,self.run_time,self.run_num,c,self.ip,self.controller)
+			p=core.Multi_p(self.queue,i,self.filename,self.t_num,0,self.run_time,self.run_num,c,self.url,self.controller)
 			process_group.append(p)
 		#print ('start',time.time())
 		for g in process_group:
@@ -145,7 +144,7 @@ class TestJob(Process):
 			time.sleep(1)
 		print('\nanalyzing results...\n')
 		print('r.logpath:',r.logpath)
-		report = tracker.Report(self.id,r.logpath,self.ip,self.reportfile)
+		report = tracker.Report(self.id,r.logpath,self.url,self.reportfile)
 		report.generateReport()
 		self.processStatus['status'] = 1
 		print('processStatus:%s' %self.processStatus)

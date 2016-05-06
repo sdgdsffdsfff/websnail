@@ -16,13 +16,7 @@
 			{{ form.csrf_token }}
 			<div class="row">
 				<div style="float:left;display:inline;margin-left:30px">
-				{{ form.servicetype.label }} {{ form.servicetype(class="btn btn-default dropdown-toggle") }}
-				</div>
-				<div style="float:left;display:inline;margin-left:30px">
 				{{ form.concurrent.label }} {{ form.concurrent(class="btn btn-default dropdown-toggle") }}
-				</div>
-				<div style="float:left;display:inline;margin-left:30px">
-				{{ form.suit.label }} {{ form.suit(class="btn btn-default dropdown-toggle") }}
 				</div>
 				<div style="float:left;display:inline;margin-left:30px">
 				{{ form.serviceversion.label }} {{ form.serviceversion(class="multiselect") }}
@@ -48,8 +42,6 @@
 		<tr>
 			<td class="info">版本</td>
 			<td class="info">线程数(并发)</td>
-			<td class="info">测试集</td>
-			<td class="info">样本数量</td>
 			<td class="info">平均响应时间(秒)</td>
 			<td class="info">吞吐量</td>
 			<td class="info">CustomTimers</td>
@@ -203,15 +195,11 @@
 
 <script language="javascript">
 	window.onload=changeSelect;
-	var type = document.getElementById("servicetype");
 	var conc = document.getElementById("concurrent");
-	var suit = document.getElementById("suit");
-	type.onclick=changeSelect;
 	conc.onclick=changeSelect;
-	suit.onclick=changeSelect;
 //bootstrap-multiselect
 	function changeSelect() {
-		$.get('/getversion?type={0}&conc={1}&suit={2}'.format(type.selectedIndex,conc.selectedIndex,suit.selectedIndex),function(data) {
+		$.get('/getversion?conc={1}'.format(conc.selectedIndex),function(data) {
 			data = JSON.parse(data);
 			
 			$('option',$('#serviceversion')).remove();

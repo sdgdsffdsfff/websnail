@@ -1,11 +1,11 @@
 #encoding:utf-8
-from flask import request,session,render_template,redirect,url_for,flash
+from flask import request,session,render_template,redirect,url_for,flash,jsonify
 from datetime import datetime
 from . import main
 from .forms import ScriptForm,TSForm
-from ..models import db,Script
+from ..models import db,Script,Service
 from .Public import logging
-import os,traceback
+import os,traceback,time
 from json import JSONEncoder
 from flask.ext.login import login_required
 
@@ -17,6 +17,7 @@ scriptpath = os.sep.join([os.getcwd(),'datas','scripts'])
 def scripts():
 	scripts = None
 	form = TSForm()
+	form.service.choices = [(i+1,service.name) for i,service in enumerate(Service.query.filter_by(status=0).all())]
 
 	try:
 		scripts = Script.query.filter("status != -1").order_by(Script.id.desc()).all()
@@ -27,7 +28,13 @@ def scripts():
 		return render_template('dberror.html',errorinfo=errorinfo.split('\n'))
 	
 	if request.method == 'POST' and form.validate_on_submit():
+		service = None
 		scriptForm = ScriptForm()
+
+		for i,v in form.service.choices:
+			if i == int(form.service.data):
+				service = Service.query.filter_by(id=i).first()
+
 		base_content = ''
 		with open(os.path.join(scriptpath,'script.base'),'r') as f:
 			base_content = f.read().strip()
@@ -37,7 +44,7 @@ def scripts():
 		if form.need_headers.data:
 			headers = form.headers.data
 		else:
-			headers = {"content-type":"text/html"}
+			headers = {}
 		
 		if form.returnfield.data:
 			fields = form.returnfield.data.split(',')
@@ -49,21 +56,22 @@ def scripts():
 		data = stripformat(form.data.data[1:-1]) if form.data.data and form.data.data.startswith('{') and form.data.data.endswith('}') else stripformat(form.data.data)
 
 		content = base_content.format(
-			ip=form.ip.data,
-			path=form.path.data or '',
+			url=service.address,
 			headers=headers,
 			conn_timeout=form.connect_timeout.data or 30,
 			resp_timeout=form.response_timeout.data or 60,
-			method=form.method.data,
-			param_type="data" if form.method.data == "post" else "params",
+			method=service.method.lower(),
+			param_type="data" if service.method.lower() == "post" else "params",
 			data=data,
 			counter=counter
 			)
 
-		scriptForm.scriptname.data = "Undefined.py"
-		scriptForm.desc.data = "Undefined"
+		service_scripts = Script.query.filter_by(serviceid=service.id).all()
+
+		scriptForm.scriptname.data = "Case_%s_%s.py" %(service.name,len(service_scripts)+1)
+		scriptForm.desc.data = "测试脚本"
 		scriptForm.content.data = content
-		saveEdit(scriptForm)
+		saveEdit(scriptForm,serviceid=service.id)
 		scriptid = Script.query.order_by(Script.id.desc()).first().id
 
 		return redirect(url_for('.editScript',id=str(scriptid)))
@@ -89,20 +97,6 @@ def stripformat(data):
 			return None
 	else:
 		return None
-	
-@main.route('/addscript',methods=['POST','GET'])
-@login_required
-def addscript():
-	scriptForm = ScriptForm()
-	if request.method == 'POST' and scriptForm.validate():
-		if scriptForm.content.data != '':
-			saveEdit(scriptForm)
-			return(redirect(url_for('.scripts')))
-		else:
-			flash({"type":"error","message":"新增失败，脚本内容必填！"})
-			return(redirect(url_for('.scripts')))
-
-	return(render_template('editscript.html',form=scriptForm))
 
 @main.route('/editscript/<id>',methods=['POST','GET'])
 @login_required
@@ -115,7 +109,7 @@ def editScript(id):
 		return(redirect(url_for('.scripts')))
 	if request.method == 'POST' and scriptForm.validate():
 		if scriptForm.content.data != '':
-			saveEdit(scriptForm,script)
+			saveEdit(scriptForm,script=script)
 			return(redirect(url_for('.scripts')))
 		else:
 			flash({"type":"error","message":"编辑失败，脚本内容不允许空！"})
@@ -125,34 +119,25 @@ def editScript(id):
 	scriptForm.desc.data = script.desc
 	scriptForm.content.data = script.content
 
-	return(render_template('editscript.html',form=scriptForm))
+	return render_template('editscript.html',form=scriptForm,id=id)
 
 @main.route('/delscript/<int:id>')
 @login_required
 def delScript(id):
-	script_del = None
+	info = {"result":True,"errorMsg":None}
 	try:
 		script_del = Script.query.filter_by(id=id).first()
-	except:
-		logging.error("数据库异常："+traceback.format_exc())
-		flash({"type":"error","message":"删除失败！数据库异常！"})
-		#return(redirect(url_for('.scripts')))
-		return("failed")
-	if script_del is not None:
-		#db.session.delete(query_result)
-		script_del.status = -1
-		try:
+		if script_del:
+			script_del.status = -1
 			db.session.add(script_del)
 			db.session.commit()
-		except:
-			logging.error("数据库提交异常："+traceback.format_exc())
-		flash({"id":id,"type":"del","message":"您刚刚删除了一个脚本：{name}".format(name=script_del.filename)})
-		#return(redirect(url_for('.scripts')))
-		return("success")
-	else:
-		logging.error("数据库找不到对应脚本！")
-		#return render_template("404.html"),404
-		return("failed")
+		else:
+			info = {"result":False,"errorMsg":"脚本不存在或已被删除"}
+	except:
+		logging.error("数据库异常："+traceback.format_exc())
+		info = {"result":False,"errorMsg":"数据库异常"}
+	finally:
+		return jsonify(info)
 
 @main.route("/tests",methods=["POST"])
 @login_required
@@ -236,7 +221,7 @@ def getDiffScript(id):
 	else:
 		return(None)
 
-def saveEdit(scriptForm,script=None):
+def saveEdit(scriptForm,serviceid=None,script=None):
 	mode = 0 #编辑
 	if script is None:
 		mode = 1 #新增
@@ -244,7 +229,8 @@ def saveEdit(scriptForm,script=None):
 			filename = scriptForm.scriptname.data,
 			desc = scriptForm.desc.data,
 			path = scriptpath,
-			content = scriptForm.content.data
+			content = scriptForm.content.data,
+			serviceid=serviceid
 		)
 	else:
 		script.filename = scriptForm.scriptname.data
